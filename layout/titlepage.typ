@@ -40,24 +40,24 @@
   )
 
   v(2mm)
-  align(center, text(font: fonts.sans, 1.3em, weight: 100, program + linebreak() + degree + linebreak() + specialization))
+  align(center, text(1.3em, weight: 100, program + linebreak() + degree + linebreak() + specialization))
 
   v(45mm)
   align(center, text(font: fonts.sans, 2.5em, weight: 700, title))
   v(3mm)
   align(center, text(font: fonts.sans, 2.0em, weight: 700, author))
   v(3mm)
-  align(center, text(font: fonts.sans, 1.3em, weight: 100, presentationDate.display("[month repr:long], [year]")))
+  align(center, text(1.3em, weight: 100, presentationDate.display("[month repr:long], [year]")))
 
   
   v(4cm)
 
   
-  align(center, text(font: fonts.sans, 1.3em, weight: 100, "Research performed at YOUR LAB"))
+  align(center, text(1.3em, weight: 100, "Research performed at YOUR LAB"))
   v(5mm)
-  align(center, text(font: fonts.sans, 1.3em, weight: 100, "Under the supervision of:" + linebreak() + supervisor))
+  align(center, text(1.3em, weight: 100, "Under the supervision of:" + linebreak() + supervisor))
   v(5mm)
-  align(center, text(font: fonts.sans, 1.3em, weight: 100, 
+  align(center, text(1.3em, weight: 100, 
         "Defended before a jury composed of:" + linebreak() +
         "Head of the jury" + linebreak() +
         "Jury member 1" + linebreak() +
@@ -68,8 +68,8 @@
     columns: (.1fr, 1fr, 1fr, .1fr),
     rows: 1.3em,
     grid.cell(""),
-    grid.cell(align(left, text(font: fonts.sans, 1.3em, weight: 100, presentationDate.display("[month repr:long]")))),
-    grid.cell(align(right, text(font: fonts.sans, 1.3em, weight: 100, presentationDate.display("[year]")))),
+    grid.cell(align(left, text(1.3em, weight: 100, presentationDate.display("[month repr:long]")))),
+    grid.cell(align(right, text(1.3em, weight: 100, presentationDate.display("[year]")))),
     grid.cell(""),
   )
 
