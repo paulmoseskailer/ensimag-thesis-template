@@ -1,23 +1,9 @@
-# thesis-template-typst
-This repository provides a comprehensive Typst template for writing your Bachelor's or Master's thesis at the CIT School of TUM (Technical University of Munich). It includes two types of documents: a proposal template and a thesis template, both specifically designed for students in the field of Informatics. For more information about writing a thesis at the CIT School, please visit the [official CIT website](https://www.cit.tum.de/en/cit/studies/students/thesis-completing-your-studies/informatics/).
+# Ensimag thesis-template-typst
 
-**Note:** This is only a template. You have to adapt the template to your thesis and discuss the structure of your thesis with your supervisor!
+This is a [typst](https://typst.app/) template for an MoSIG M2 internship report.
+It was itself generated from the [CIT TUM thesis template](https://github.com/ls1intum/thesis-template-typst) and aims to resemble the [LaTeX template](https://mosig.imag.fr/ProgramEn/ProjectOverview) provided on the [MoSIG website](https://mosig.imag.fr/ProgramEn/ProjectOverview) as closely as possible.
 
---- 
-## Guidelines 
-
-__Please thorougly read our guidelines and hints on [confluence](https://confluence.ase.in.tum.de/display/EduResStud/How+to+thesis)!__ (TUM Login Required) 
-
----
-## Installation
-
-For detailed installation instructions, please refer to the [official installation guide](https://github.com/typst/typst). Here, we provide basic steps for installing Typst's CLI:
-
-- You can get sources and pre-built binaries from the [releases page](https://github.com/typst/typst/releases).
-- Use package managers like `brew` or `pacman` to install Typst. Be aware that the versions in the package managers might lag behind the latest release.
-- If you have a [Rust](https://rustup.rs/) toolchain installed, you can also install the latest development version.
-
-Nix and Docker users, please refer to the official installation guide for detailed instructions.
+I am sure it is full of inaccuracies (compared to the LaTeX template) and riddled with bad typst practices, so use at your own discretion.
 
 ## Usage
 ### Set thesis metadata 
@@ -53,45 +39,6 @@ compilation.
 ```sh
 # Watches source files and recompiles on changes.
 typst watch thesis.typ
-```
-
-### Updating Your Repository to the Latest Template Version
-If you have created your thesis repository using the Typst Thesis Template, you might want to update your repository to incorporate the latest changes from the template. Follow these steps to sync your repository with the latest version of the template.
-
-**Steps to Update:**
-1. Add the Template Repository as a Remote 
-First, navigate to your repository in the terminal and add the original template repository as a new remote:
-```sh
-git remote add template https://github.com/ls1intum/thesis-template-typst.git
-```
-
-2. Fetch the latest updates from the template repository:
-```sh
-git fetch template
-```
-
-3. Merge the Changes into Your Repository
-Merge the changes from the template's main branch into your current branch. This might require resolving merge conflicts if there are any differences between your customizations and the template's updates:
-```sh
-git merge template/main --allow-unrelated-histories
-```
-
-4. Resolve Merge Conflicts
-If there are any merge conflicts, git will notify you. Open the conflicting files, resolve the conflicts, and then add the resolved files:
-```sh
-git add <resolved-file>
-```
-
-5. Commit the Merge
-After resolving conflicts and adding the resolved files, commit the merge:
-```sh
-git commit -m "Merge updates from Typst Thesis Template"
-```
-
-6. Push the Changes to Your Repository
-Finally, push the merged changes to your repository:
-```sh
-git push origin <branch-name>
 ```
 
 ## Working with the Typst Web Editor
