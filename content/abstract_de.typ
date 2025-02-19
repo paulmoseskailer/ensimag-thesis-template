@@ -1,1 +1,0 @@
-Note: Insert the German translation of the English abstract here.

@@ -10,15 +10,13 @@
   program: program,
   specialization: specialization,
   supervisor: supervisor,
-  advisors: advisors,
   author: author,
   startDate: startDate,
   submissionDate: submissionDate,
   presentationDate: presentationDate,
   abstract_en: include "/content/abstract_en.typ",
-  abstract_de: include "/content/abstract_de.typ",
-  acknowledgement: include "/content/acknowledgement.typ",
-  transparency_ai_tools: include "/content/transparency_ai_tools.typ",
+  acknowledgement_content: include "/content/acknowledgement.typ",
+  abstract_fr: include "/content/abstract_fr.typ",
 )
 
 #include "/content/introduction.typ"

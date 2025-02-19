@@ -1,7 +1,5 @@
 #import "/layout/titlepage.typ": *
-#import "/layout/disclaimer.typ": *
-#import "/layout/acknowledgement.typ": acknowledgement as acknowledgement_layout
-#import "/layout/transparency_ai_tools.typ": transparency_ai_tools as transparency_ai_tools_layout
+#import "/layout/acknowledgement.typ": *
 #import "/layout/abstract.typ": *
 #import "/utils/print_page_break.typ": *
 #import "/layout/fonts.typ": *
@@ -13,15 +11,13 @@
   program: "",
   specialization: "",
   supervisor: "",
-  advisors: (),
   author: "",
   startDate: datetime,
   submissionDate: datetime,
   presentationDate: datetime,
   abstract_en: "",
-  abstract_de: "",
-  acknowledgement: "",
-  transparency_ai_tools: "",
+  acknowledgement_content: "",
+  abstract_fr: "",
   is_print: false,
   body,
 ) = {
@@ -32,7 +28,6 @@
     program: program,
     specialization: specialization,
     supervisor: supervisor,
-    advisors: advisors,
     author: author,
     startDate: startDate,
     submissionDate: submissionDate,
@@ -41,22 +36,17 @@
 
   print_page_break(print: is_print, to: "even")
 
-  disclaimer(
-    title: title,
-    degree: degree,
-    author: author,
-    submissionDate: submissionDate
+  print_page_break(print: is_print)
+
+  set page(
+    margin: (left: 40mm, right: 40mm, top: 30mm, bottom: 30mm),
+    numbering: none,
+    number-align: center,
   )
-  transparency_ai_tools_layout(transparency_ai_tools)
-
-  print_page_break(print: is_print)
   
-  acknowledgement_layout(acknowledgement)
-
-  print_page_break(print: is_print)
-
   abstract(lang: "en")[#abstract_en]
-  abstract(lang: "de")[#abstract_de]
+  acknowledgement()[#acknowledgement_content]
+  abstract(lang: "fr")[#abstract_fr]
 
   set page(
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),

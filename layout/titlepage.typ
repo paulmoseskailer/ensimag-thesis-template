@@ -7,7 +7,6 @@
   program: "",
   specialization: "",
   supervisor: "",
-  advisors: (),
   author: "",
   startDate: datetime,
   submissionDate: datetime,
@@ -56,7 +55,7 @@
   
   align(center, text(font: fonts.sans, 1.3em, weight: 100, "Research performed at YOUR LAB"))
   v(5mm)
-  align(center, text(font: fonts.sans, 1.3em, weight: 100, "Under the supervision of:" + linebreak() + "Your Supervisor"))
+  align(center, text(font: fonts.sans, 1.3em, weight: 100, "Under the supervision of:" + linebreak() + supervisor))
   v(5mm)
   align(center, text(font: fonts.sans, 1.3em, weight: 100, 
         "Defended before a jury composed of:" + linebreak() +
