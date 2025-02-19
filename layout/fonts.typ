@@ -1,4 +1,4 @@
 #let fonts = (
-  body: "New Computer Modern",
-  sans: "New Computer Modern Sans",
+  body: "libertinus serif",
+  sans: "libertinus serif",
 )

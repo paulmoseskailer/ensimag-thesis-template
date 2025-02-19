@@ -2,20 +2,22 @@
 
 #let titlepage(
   title: "",
-  titleGerman: "",
+  titleFrench: "",
   degree: "",
   program: "",
+  specialization: "",
   supervisor: "",
   advisors: (),
   author: "",
   startDate: datetime,
   submissionDate: datetime,
+  presentationDate: datetime,
 ) = {
   // Quality checks
-  assert(degree in ("Bachelor", "Master"), message: "The degree must be either 'Bachelor' or 'Master'")
+  //assert(degree in ("Bachelor", "Master"), message: "The degree must be either 'Bachelor' or 'Master'")
   
   set page(
-    margin: (left: 20mm, right: 20mm, top: 30mm, bottom: 30mm),
+    margin: (left: 20mm, right: 20mm, top: 25mm, bottom: 30mm),
     numbering: none,
     number-align: center,
   )
@@ -27,49 +29,49 @@
   )
 
   set par(leading: 0.5em)
+  set par(spacing: 0.5em)
 
   
   // --- Title Page ---
-  v(1cm)
-  align(center, image("/figures/tum_logo.png", width: 26%))
-
-  v(5mm)
-  align(center, text(font: fonts.sans, 2em, weight: 700, "Technical University of Munich"))
-
-  v(5mm)
-  align(center, text(font: fonts.sans, 1.5em, weight: 100, "School of Computation, Information and Technology \n -- Informatics --"))
-  
-  v(15mm)
-
-  align(center, text(font: fonts.sans, 1.3em, weight: 100, degree + "’s Thesis in " + program))
-  v(8mm)
-  
-
-  align(center, text(font: fonts.sans, 2em, weight: 700, title))
-  
-
-  align(center, text(font: fonts.sans, 2em, weight: 500, titleGerman))
-
-  let entries = ()
-  entries.push(("Author: ", author))
-  entries.push(("Supervisor: ", supervisor))
-  // Only show advisors if there are any
-  if advisors.len() > 0 {
-    entries.push(("Advisors: ", advisors.join(", ")))
-  }
-  entries.push(("Start Date: ", startDate.display("[day].[month].[year]")))
-  entries.push(("Submission Date: ", submissionDate.display("[day].[month].[year]")))
-
-  v(1cm)
-  align(
-    center,
-    grid(
-      columns: 2,
-      gutter: 1em,
-      align: left,
-      ..for (term, desc) in entries {
-        (strong(term), desc)
-      }
-    )
+  grid(
+    columns: (1fr, 1fr, 1fr),
+    grid.cell(inset:.6cm, align(center + bottom, image("../figures/uga_logo.png", width:80%))),
+    grid.cell(""),
+    grid.cell(align(center + top, image("../figures/inp_logo.png", width:60%))),
   )
+
+  v(2mm)
+  align(center, text(font: fonts.sans, 1.3em, weight: 100, program + linebreak() + degree + linebreak() + specialization))
+
+  v(45mm)
+  align(center, text(font: fonts.sans, 2.5em, weight: 700, title))
+  v(3mm)
+  align(center, text(font: fonts.sans, 2.0em, weight: 700, author))
+  v(3mm)
+  align(center, text(font: fonts.sans, 1.3em, weight: 100, presentationDate.display("[month repr:long], [year]")))
+
+  
+  v(4cm)
+
+  
+  align(center, text(font: fonts.sans, 1.3em, weight: 100, "Research performed at YOUR LAB"))
+  v(5mm)
+  align(center, text(font: fonts.sans, 1.3em, weight: 100, "Under the supervision of:" + linebreak() + "Your Supervisor"))
+  v(5mm)
+  align(center, text(font: fonts.sans, 1.3em, weight: 100, 
+        "Defended before a jury composed of:" + linebreak() +
+        "Head of the jury" + linebreak() +
+        "Jury member 1" + linebreak() +
+        "Jury member 2" + linebreak()
+  ))
+
+  grid(
+    columns: (.1fr, 1fr, 1fr, .1fr),
+    rows: 1.3em,
+    grid.cell(""),
+    grid.cell(align(left, text(font: fonts.sans, 1.3em, weight: 100, presentationDate.display("[month repr:long]")))),
+    grid.cell(align(right, text(font: fonts.sans, 1.3em, weight: 100, presentationDate.display("[year]")))),
+    grid.cell(""),
+  )
+
 }

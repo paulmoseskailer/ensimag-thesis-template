@@ -1,18 +1,20 @@
 #import "/layout/thesis_template.typ": *
 #import "/metadata.typ": *
 
-#set document(title: titleEnglish, author: author)
+#set document(title: title, author: author)
 
 #show: thesis.with(
-  title: titleEnglish,
-  titleGerman: titleGerman,
+  title: title,
+  titleFrench: titleFrench,
   degree: degree,
   program: program,
+  specialization: specialization,
   supervisor: supervisor,
   advisors: advisors,
   author: author,
   startDate: startDate,
   submissionDate: submissionDate,
+  presentationDate: presentationDate,
   abstract_en: include "/content/abstract_en.typ",
   abstract_de: include "/content/abstract_de.typ",
   acknowledgement: include "/content/acknowledgement.typ",

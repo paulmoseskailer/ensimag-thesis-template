@@ -1,3 +1,5 @@
 *.pdf
 
 !ensimag-template.pdf
+
+LatexTemplate/*

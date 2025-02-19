@@ -1,4 +1,3 @@
-#import "/layout/cover.typ": *
 #import "/layout/titlepage.typ": *
 #import "/layout/disclaimer.typ": *
 #import "/layout/acknowledgement.typ": acknowledgement as acknowledgement_layout
@@ -9,14 +8,16 @@
 
 #let thesis(
   title: "",
-  titleGerman: "",
+  titleFrench: "",
   degree: "",
   program: "",
+  specialization: "",
   supervisor: "",
   advisors: (),
   author: "",
   startDate: datetime,
   submissionDate: datetime,
+  presentationDate: datetime,
   abstract_en: "",
   abstract_de: "",
   acknowledgement: "",
@@ -24,25 +25,18 @@
   is_print: false,
   body,
 ) = {
-  cover(
-    title: title,
-    degree: degree,
-    program: program,
-    author: author,
-  )
-
-  pagebreak()
-
   titlepage(
     title: title,
-    titleGerman: titleGerman,
+    titleFrench: titleFrench,
     degree: degree,
     program: program,
+    specialization: specialization,
     supervisor: supervisor,
     advisors: advisors,
     author: author,
     startDate: startDate,
-    submissionDate: submissionDate
+    submissionDate: submissionDate,
+    presentationDate: presentationDate
   )
 
   print_page_break(print: is_print, to: "even")
