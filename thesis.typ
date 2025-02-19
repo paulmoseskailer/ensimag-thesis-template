@@ -20,9 +20,12 @@
 )
 
 #include "/content/introduction.typ"
+#pagebreak()#pagebreak()
 #include "/content/background.typ"
-#include "/content/related_work.typ"
-#include "/content/requirements_analysis.typ"
+#pagebreak()
 #include "/content/system_design.typ"
+#pagebreak()
 #include "/content/evaluation.typ"
-#include "/content/summary.typ"
+#pagebreak()
+#include "/content/conclusion.typ"
+#pagebreak()

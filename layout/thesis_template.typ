@@ -48,6 +48,9 @@
   acknowledgement()[#acknowledgement_content]
   abstract(lang: "fr")[#abstract_fr]
 
+  pagebreak()
+  print_page_break(print: is_print)
+
   set page(
     margin: (left: 30mm, right: 30mm, top: 40mm, bottom: 40mm),
     numbering: none,
@@ -92,7 +95,17 @@
   show figure: set text(size: 0.85em)
   
   // --- Table of Contents ---
+  set page(
+    margin: (left: 30mm, right: 30mm, top: 60mm, bottom: 40mm),
+    numbering: none,
+    number-align: center,
+  )
+  show outline: it => {
+    show heading: set align(center)
+    it
+  }
   show outline.entry.where(level: 1): it => {
+    show repeat: none
     v(15pt, weak: true)
     strong(it)
   }
@@ -107,16 +120,24 @@
   
   v(2.4fr)
   pagebreak()
+  pagebreak()
 
 
-    // Main body. Reset page numbering.
+  // Main body. Reset page numbering.
   set page(numbering: "1")
   counter(page).update(1)
   set par(justify: true, first-line-indent: 2em)
+    // Configure section headings
+    show heading: it => {
+      set align(center)
+      sym.bar.h + counter(heading).display() + sym.bar.h + linebreak()
+      it.body
+    }
 
-  body
+    body
 
   // List of figures.
+  /*
   pagebreak()
   heading(numbering: none)[List of Figures]
   outline(
@@ -131,12 +152,18 @@
     title: "",
     target: figure.where(kind: table)
   )
+  */
+
+  // Configure section headings
 
   // Appendix.
+  set heading(numbering: "A")
+  counter(heading).update(0)
   pagebreak()
-  heading(numbering: none)[Appendix A: Supplementary Material]
+  heading(numbering: "A")[Appendix]
   include("/layout/appendix.typ")
 
   pagebreak()
+  show bibliography: set heading(numbering: "A")
   bibliography("/thesis.bib")
 }

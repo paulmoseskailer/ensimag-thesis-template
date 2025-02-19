@@ -1,6 +1,6 @@
 #import "/utils/todo.typ": TODO
 
-= Case Study / Evaluation
+= Evaluation
 #TODO[
   If you did an evaluation / case study, describe it here.
 ]
@@ -19,18 +19,7 @@
 #TODO[
   Summarize the most interesting results of your evaluation (without interpretation). Additional results can be put into the appendix.
 ]
-
-== Findings
-#TODO[
-  Interpret the results and conclude interesting findings
-]
-
-== Discussion
+== Discussion/Limitations
 #TODO[
   Discuss the findings in more detail and also review possible disadvantages that you found
-]
-
-== Limitations
-#TODO[
-  Describe limitations and threats to validity of your evaluation, e.g. reliability, generalizability, selection bias, researcher bias
 ]
